@@ -70,6 +70,7 @@ public class SpoolDirCsvSourceTask extends AbstractSpoolDirSourceTask<SpoolDirCs
     }
 
     if (null != lastOffset) {
+      log.info("there is no sftp");
       log.info("Found previous offset. Skipping {} line(s).", lastOffset.intValue());
       String[] row = null;
       while (null != (row = this.csvReader.readNext()) && this.csvReader.getLinesRead() < lastOffset) {
